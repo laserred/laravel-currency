@@ -79,6 +79,7 @@ class Manage extends Command
         $this->output->write("Adding {$currency} currency...");
 
         $data['code'] = $currency;
+        $data['active'] = true;
 
         if (is_string($result = $this->storage->create($data))) {
             $this->output->writeln('<error>' . ($result ?: 'Failed') . '</error>');
